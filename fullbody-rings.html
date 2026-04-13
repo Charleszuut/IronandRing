@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron & Ring | Full Body Hypertrophy (Rings)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--dark:#1A1A14;--dark-2:#222219;--dark-3:#2A2A1F;--green:#2D5016;--green-mid:#3B6B1F;--green-light:#4E8A28;--rust:#B84A1A;--rust-light:#D4622A;--cream:#F7F1EA;--muted:rgba(247,241,234,0.45);--gold:#C9922A;--border:rgba(247,241,234,0.08);} 
+body{background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif;line-height:1.5;}a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:50;background:rgba(26,26,20,0.95);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:14px 20px;}
+.nav-left{display:flex;align-items:baseline;gap:12px;}.brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:0.08em;text-transform:uppercase;}.program-tag{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);} .back-link{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--rust-light);} 
+main{max-width:1120px;margin:0 auto;padding:28px 20px 56px;}
+.prog-hero{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;margin-bottom:16px;}.hero-copy,.hero-stats{background:var(--dark-2);border:1px solid var(--border);padding:22px;}
+.kicker{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:10px;}h1{font-family:'Barlow Condensed',sans-serif;font-size:56px;line-height:0.92;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:12px;} .hero-copy p{color:var(--muted);max-width:64ch;}
+.stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.stat{background:var(--dark-3);border:1px solid var(--border);padding:14px;}.stat-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}.stat-value{font-family:'Barlow Condensed',sans-serif;font-size:26px;line-height:1;text-transform:uppercase;}
+.principles{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px;padding:14px 16px;background:var(--dark-2);border:1px solid var(--border);} .pr-item{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(247,241,234,0.62);} .p-dot{width:6px;height:6px;border-radius:50%;background:var(--green-light);} 
+.philosophy{background:var(--dark-2);border:1px solid var(--border);border-left:4px solid var(--rust);padding:18px;margin-bottom:18px;} .philosophy h2{font-family:'Barlow Condensed',sans-serif;font-size:28px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;} .philosophy p{color:var(--muted);} 
+.week-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;} .week-tab{border:1px solid var(--border);background:var(--dark-2);color:var(--cream);padding:10px 16px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;} .week-tab.active{background:var(--rust);border-color:var(--rust);} 
+.week-block{display:none;} .week-block.active{display:block;} .week-intro{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--dark-2);border:1px solid var(--border);padding:14px 16px;margin-bottom:12px;} .week-intro h3{font-family:'Barlow Condensed',sans-serif;font-size:28px;letter-spacing:0.04em;text-transform:uppercase;} .week-intro p{font-size:13px;color:var(--muted);} 
+.rir-badge{display:inline-block;background:rgba(184,74,26,0.2);color:var(--rust-light);border:1px solid rgba(184,74,26,0.45);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;}
+.day-card{border:1px solid var(--border);background:var(--dark-2);margin-bottom:10px;} .day-header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;} .day-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap;} .day-id{font-family:'Barlow Condensed',sans-serif;font-size:26px;letter-spacing:0.05em;text-transform:uppercase;} .day-name{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(247,241,234,0.7);} .day-badge{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;background:rgba(78,138,40,0.2);color:#a8d08f;border:1px solid rgba(78,138,40,0.45);padding:4px 8px;} .day-toggle{font-size:22px;line-height:1;transition:transform 0.2s ease;color:var(--muted);} .day-toggle.open{transform:rotate(45deg);} 
+.day-body{max-height:0;overflow:hidden;padding:0 16px;transition:max-height 0.28s ease,padding 0.28s ease;} .day-body.open{max-height:2200px;padding:0 16px 16px;} .table-wrap{overflow-x:auto;border:1px solid var(--border);} table{width:100%;border-collapse:collapse;min-width:760px;background:var(--dark);} th,td{border-bottom:1px solid var(--border);padding:10px 8px;text-align:left;vertical-align:top;} th{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,241,234,0.65);background:var(--dark-3);} td{font-size:13px;color:rgba(247,241,234,0.9);} .exercise-name{font-weight:500;} .cue{font-size:11px;color:var(--muted);margin-top:4px;} 
+.note-list{margin:12px 0 0 18px;color:var(--muted);} .note-list li{margin-bottom:6px;} .same-callout{margin-top:10px;background:rgba(201,146,42,0.12);border:1px solid rgba(201,146,42,0.4);color:#e4c27b;padding:10px 12px;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;}
+.progression{margin-top:24px;} .progression h2{font-family:'Barlow Condensed',sans-serif;font-size:34px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;} .progress-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;} .phase-card{background:var(--dark-2);border:1px solid var(--border);padding:14px;} .phase{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;} .phase-weeks{font-family:'Barlow Condensed',sans-serif;font-size:30px;line-height:1;margin-bottom:8px;} .phase-rir{margin-bottom:8px;} .phase-card p{font-size:13px;color:var(--muted);} 
+footer{border-top:1px solid var(--border);padding:22px 20px;text-align:center;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(247,241,234,0.52);} 
+@media (max-width:900px){.prog-hero{grid-template-columns:1fr;}}
+@media (max-width:640px){main{padding:20px 14px 48px;}nav{padding:12px 14px;}h1{font-size:44px;}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.principles{flex-direction:column;align-items:flex-start;}table th:nth-child(5),table td:nth-child(5),table th:nth-child(6),table td:nth-child(6){display:none;}.progress-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left"><div class="brand">Iron & Ring</div><div class="program-tag">Full Body Hypertrophy | Rings</div></div>
+  <a class="back-link" href="bundle-index.html">&larr; All Programs</a>
+</nav>
+<main>
+  <section class="prog-hero">
+    <div class="hero-copy">
+      <div class="kicker">8-Week Program Guide</div>
+      <h1>Full Body<br>Rings</h1>
+      <p>This 3-day rings plan blends hypertrophy mechanics with bodyweight control. You will use rings, a pull-up bar, and bands to create long-length tension, stable progressions, and high-quality reps without machine dependency.</p>
+    </div>
+    <div class="hero-stats"><div class="stats-grid">
+      <div class="stat"><div class="stat-label">Days / Week</div><div class="stat-value">3</div></div>
+      <div class="stat"><div class="stat-label">Program Length</div><div class="stat-value">8 Weeks</div></div>
+      <div class="stat"><div class="stat-label">Session Time</div><div class="stat-value">50-60 Min</div></div>
+      <div class="stat"><div class="stat-label">Equipment</div><div class="stat-value">Rings + Bands</div></div>
+    </div></div>
+  </section>
+
+  <section class="principles">
+    <div class="pr-item"><span class="p-dot"></span>Stretch-Priority Loading</div>
+    <div class="pr-item"><span class="p-dot"></span>Controlled Eccentric 3-4s</div>
+    <div class="pr-item"><span class="p-dot"></span>RIR-Based Intensity</div>
+    <div class="pr-item"><span class="p-dot"></span>Minimal Effective Volume</div>
+  </section>
+
+  <section class="philosophy">
+    <h2>Iron & Ring Approach</h2>
+    <p>Rings are unstable by design, so control is your overload tool. You will slow eccentrics, own deep ranges, and stop with reps in reserve instead of chasing failure. Progress happens by better positioning first, then tougher leverage or added load. Form quality decides adaptation quality.</p>
+  </section>
+
+  <section class="week-nav">
+    <button class="week-tab active" onclick="showWeek(1,this)">Weeks 1-2</button>
+    <button class="week-tab" onclick="showWeek(2,this)">Weeks 3-4</button>
+    <button class="week-tab" onclick="showWeek(3,this)">Weeks 5-6</button>
+    <button class="week-tab" onclick="showWeek(4,this)">Weeks 7-8</button>
+  </section>
+
+  <section class="prog-content">
+    <div id="week-1" class="week-block active">
+      <div class="week-intro"><h3>Weeks 1-2 <span class="rir-badge">3 RIR</span></h3><p>Foundation phase: dial in ring setup, bodyline control, and full ROM.</p></div>
+
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Day A</div><div class="day-name">Push Emphasis</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="table-wrap"><table><thead><tr><th>#</th><th>Exercise</th><th>Target Muscle</th><th>Sets x Reps</th><th>Tempo</th><th>Rest</th><th>RIR</th></tr></thead><tbody>
+        <tr><td>1</td><td><div class="exercise-name">Ring Push-Up (Feet Elevated if Advanced)</div><div class="cue">Externally rotate rings at the top and feel chest stretch at bottom.</div></td><td>Chest/Triceps</td><td>3 x 8-15</td><td>3-0-1-0</td><td>2 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>2</td><td><div class="exercise-name">Ring Row</div><div class="cue">Start by retracting shoulder blades before arm pull.</div></td><td>Back/Biceps</td><td>3 x 8-15</td><td>3-1-1-0</td><td>2 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>3</td><td><div class="exercise-name">Band Pull-Apart</div><div class="cue">Open band with upper back, not low-back extension.</div></td><td>Rear Delts</td><td>2 x 15-20</td><td>2-1-1-0</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>4</td><td><div class="exercise-name">Ring Pike Push-Up</div><div class="cue">Keep hips high and lower crown of head slowly toward floor.</div></td><td>Shoulders</td><td>3 x 8-12</td><td>3-0-1-0</td><td>2 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>5</td><td><div class="exercise-name">Ring Tricep Extension</div><div class="cue">Keep elbows fixed and control the long-range stretch.</div></td><td>Triceps Long Head</td><td>2 x 8-15</td><td>3-0-1-0</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+      </tbody></table></div>
+      <ul class="note-list"><li>Adjust ring height before starting so reps are consistent.</li><li>Body horizontal on rows is harder; scale angle when needed.</li></ul></div></article>
+
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Day B</div><div class="day-name">Pull Emphasis</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="table-wrap"><table><thead><tr><th>#</th><th>Exercise</th><th>Target Muscle</th><th>Sets x Reps</th><th>Tempo</th><th>Rest</th><th>RIR</th></tr></thead><tbody>
+        <tr><td>1</td><td><div class="exercise-name">Pull-Up (Wide Grip)</div><div class="cue">Depress scapula first, then pull chest toward bar.</div></td><td>Lats</td><td>3 x 5-10</td><td>3-1-1-0</td><td>3 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>2</td><td><div class="exercise-name">Ring Face Pull</div><div class="cue">Pull to eye level with external rotation at end range.</div></td><td>Rear Delts/External Rotators</td><td>3 x 12-15</td><td>2-1-1-0</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>3</td><td><div class="exercise-name">Ring Bicep Curl</div><div class="cue">Keep elbows high and let biceps fully lengthen at bottom.</div></td><td>Biceps</td><td>3 x 8-15</td><td>3-0-1-1</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>4</td><td><div class="exercise-name">Band Lateral Raise</div><div class="cue">Lift in scapular plane and pause briefly at top.</div></td><td>Side Delts</td><td>2 x 15-20</td><td>2-0-1-1</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>5</td><td><div class="exercise-name">Inverted Row on Rings</div><div class="cue">Drive chest to rings while keeping bodyline rigid.</div></td><td>Mid Back</td><td>2 x 10-15</td><td>3-1-1-0</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+      </tbody></table></div></div></article>
+
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Day C</div><div class="day-name">Lower + Full Body</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="table-wrap"><table><thead><tr><th>#</th><th>Exercise</th><th>Target Muscle</th><th>Sets x Reps</th><th>Tempo</th><th>Rest</th><th>RIR</th></tr></thead><tbody>
+        <tr><td>1</td><td><div class="exercise-name">Bulgarian Split Squat</div><div class="cue">Descend under control and keep front knee tracking cleanly.</div></td><td>Quads/Glutes</td><td>3 x 8-15</td><td>3-0-1-0</td><td>2.5 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>2</td><td><div class="exercise-name">Ring Push-Up (Dip Progression)</div><div class="cue">Use deep stretch and stable ring path, no rushing.</div></td><td>Chest/Triceps</td><td>3 x 8-15</td><td>3-0-1-0</td><td>2 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>3</td><td><div class="exercise-name">Single-Leg Glute Bridge (Band if Available)</div><div class="cue">Keep pelvis level and pause at top squeeze.</div></td><td>Glutes/Hams</td><td>3 x 12-15</td><td>3-1-1-0</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>4</td><td><div class="exercise-name">Pull-Up (Close/Neutral Grip)</div><div class="cue">Drive elbows down and avoid kicking to finish reps.</div></td><td>Lats/Biceps</td><td>3 x 5-10</td><td>3-1-1-0</td><td>2 min</td><td><span class="rir-badge">3 RIR</span></td></tr>
+        <tr><td>5</td><td><div class="exercise-name">Band Curl</div><div class="cue">Control both directions and keep elbows quiet.</div></td><td>Biceps</td><td>2 x 12-15</td><td>3-0-1-1</td><td>90s</td><td><span class="rir-badge">3 RIR</span></td></tr>
+      </tbody></table></div></div></article>
+    </div>
+
+    <div id="week-2" class="week-block"><div class="week-intro"><h3>Weeks 3-4 <span class="rir-badge">2 RIR</span></h3><p>Build phase: same movement menu, harder leverage or added resistance where earned.</p></div>
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Day A</div><div class="day-name">Push Emphasis</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="same-callout">Same exercises as Weeks 1-2 - update RIR and load/leverage.</div></div></article>
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Day B</div><div class="day-name">Pull Emphasis</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="same-callout">Same exercises as Weeks 1-2 - update RIR and load/leverage.</div></div></article>
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Day C</div><div class="day-name">Lower + Full Body</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="same-callout">Same exercises as Weeks 1-2 - update RIR and load/leverage.</div></div></article>
+    </div>
+
+    <div id="week-3" class="week-block"><div class="week-intro"><h3>Weeks 5-6 <span class="rir-badge">1-2 RIR</span></h3><p>Accumulation phase: push range targets while keeping bodyline strict.</p></div>
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Days A-C</div><div class="day-name">All Sessions</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="same-callout">Same exercises as Weeks 1-2 - train at 1-2 RIR and keep control.</div></div></article>
+    </div>
+
+    <div id="week-4" class="week-block"><div class="week-intro"><h3>Weeks 7-8 <span class="rir-badge">1 RIR / Deload</span></h3><p>Week 7 peaks intensity. Week 8 reduces sets by around 40 percent.</p></div>
+      <article class="day-card"><div class="day-header" onclick="toggleDay(this)"><div class="day-left"><div class="day-id">Days A-C</div><div class="day-name">All Sessions</div><div class="day-badge">Training</div></div><div class="day-toggle">+</div></div><div class="day-body"><div class="same-callout">Same exercises as Weeks 1-2 - Week 7 peak, Week 8 deload.</div></div></article>
+    </div>
+  </section>
+
+  <section class="progression">
+    <h2>8-Week Progression</h2>
+    <div class="progress-grid">
+      <div class="phase-card"><div class="phase">Foundation</div><div class="phase-weeks">1-2</div><div class="phase-rir"><span class="rir-badge">3 RIR</span></div><p>Learn patterns, dial in form and range of motion.</p></div>
+      <div class="phase-card"><div class="phase">Build</div><div class="phase-weeks">3-4</div><div class="phase-rir"><span class="rir-badge">2 RIR</span></div><p>Add load where earned, start pushing rep ranges.</p></div>
+      <div class="phase-card"><div class="phase">Accumulate</div><div class="phase-weeks">5-6</div><div class="phase-rir"><span class="rir-badge">1-2 RIR</span></div><p>Push top-end reps and use small load increases.</p></div>
+      <div class="phase-card"><div class="phase">Peak + Deload</div><div class="phase-weeks">7-8</div><div class="phase-rir"><span class="rir-badge">1 RIR / Deload</span></div><p>Week 7 hardest; Week 8 reduce volume by 40 percent.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>Iron & Ring - Earn every rep. - &copy; 2025 Iron & Ring</footer>
+
+<script>
+function showWeek(n, btn) {
+  document.querySelectorAll('.week-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.week-block').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('week-' + n).classList.add('active');
+}
+function toggleDay(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.day-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const firstHeader = document.querySelector('.day-header');
+  if (firstHeader) toggleDay(firstHeader);
+});
+</script>
+</body>
+</html>
